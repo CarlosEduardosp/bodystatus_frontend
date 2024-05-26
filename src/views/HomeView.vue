@@ -67,36 +67,36 @@ export default {
     <Menu class="menu"></Menu>
 
     <div class="titulo">
-      <p>Análise de Peso com IA: </p>
+      <p class="subtitulo">Análise de Peso com IA </p>
       <p>Predições Precisas com Base nos Seus Dados</p>
     </div>
 
     <form @submit.prevent="enviar_dados" class="form">
 
-
-
       <div class="sub">
-        <p class="subtitulo">Dados Pessoais:</p>
+        <p class="subtitulo2">Dados Pessoais:</p>
       </div>
 
-      <div>
-        <label for="nome">Nome</label>
-        <input class="input" v-model="nome" type="text" id="nome" required>
+      <div class="bloco2">
+      <div class="inputs">
+        <label class="dados_titulo" for="nome">Nome</label>
+        <input class="input_nome" v-model="nome" type="text" id="nome" required>
 
-        <label for="idade">Idade</label>
-        <input class="input" v-model="idade" type="number" id="idade" required>
+        <label class="dados_titulo" for="idade">Idade</label>
+        <input class="input_idade" v-model="idade" type="number" id="idade" required>
       </div>
 
-      <div>
-        <label>Altura</label>
-        <input class="input" v-model="altura"  step="0.01" id="altura" required>
+      <div class="inputs">
+        <label class="dados_titulo">Altura</label>
+        <input class="input_altura" v-model="altura"  step="0.01" id="altura" required>
 
-        <label>Peso Corporal</label>
-        <input class="input" v-model="peso" type="" step="0.01" id="peso" required>
+        <label class="dados_titulo">Peso Corporal</label>
+        <input class="input_peso" v-model="peso" type="" step="0.01" id="peso" required>
+      </div>
       </div>
 
-      <div class="genero">
-        <label for="">Gênero: </label>
+      <label for="" class="dados">Gênero </label>
+      <div class="bloco" >
         <div>
           <label>
             <input class="input-genero" v-model="genero" type="radio" name="genero" value="0" required> Masculino
@@ -106,10 +106,12 @@ export default {
           </label>
         </div>
       </div>
+      
 
 
-      <label>Com que frequência você bebe álcool?</label>
-      <div>
+      <label class="dados">Com que frequência você bebe álcool?</label>
+      <div class="bloco">
+              <div>
         <label>
           <input class="input-alcool" v-model="alcool" type="radio" name="alcool" value="0" required> Nunca
         </label>
@@ -125,9 +127,10 @@ export default {
           <input class="input-alcool" type="radio" v-model="alcool" name="alcool" value="3" required> Sempre
         </label>
       </div>
+      </div>
 
-      <label>Você come alimentos com alto teor calórico com frequência?</label>
-      <div>
+      <label class="dados">Você come alimentos com alto teor calórico com frequência?</label>
+      <div class="bloco">
         <label>
           <input class="input-alimentos_caloricos" v-model="alimentos_caloricos" type="radio" name="alimentos_caloricos"
             value="0" required> Não
@@ -138,8 +141,8 @@ export default {
         </label>
       </div>
 
-      <label>Você costuma comer vegetais em suas refeições?</label>
-      <div>
+      <label class="dados">Você costuma comer vegetais em suas refeições?</label>
+      <div class="bloco">
         <label>
           <input class="input-vegetais" v-model="vegetais" type="radio" name="vegetais" value="1" required> Nunca
         </label>
@@ -151,8 +154,8 @@ export default {
         </label>
       </div>
 
-      <label>Quantas refeições principais você faz diariamente?</label>
-      <div>
+      <label class="dados">Quantas refeições principais você faz diariamente?</label>
+      <div class="bloco">
         <label>
           <input class="input-refeicoes" v-model="refeicoes" type="radio" name="refeicoes" value="1" required> 1
         </label>
@@ -168,8 +171,8 @@ export default {
       </div>
 
 
-      <label>Você monitora as calorias que ingere diariamente?</label>
-      <div>
+      <label class="dados">Você monitora as calorias que ingere diariamente?</label>
+      <div class="bloco">
         <label>
           <input class="input-monitora_calorias" v-model="monitora_calorias" type="radio" name="monitora_calorias"
             value="0" required> Não
@@ -180,8 +183,8 @@ export default {
         </label>
       </div>
 
-      <label>Você fuma?</label>
-      <div>
+      <label class="dados">Você fuma?</label>
+      <div class="bloco">
         <label>
           <input class="input-fuma" v-model="fuma" type="radio" name="fuma" value="0" required> Não
         </label>
@@ -190,8 +193,8 @@ export default {
         </label>
       </div>
 
-      <label>Quanta água você bebe diariamente?</label>
-      <div>
+      <label class="dados">Quanta água você bebe diariamente?</label>
+      <div class="bloco">
         <label>
           <input class="input-agua_diaria" v-model="agua_diaria" type="radio" name="agua_diaria" value="1" required> 1
           litro
@@ -206,8 +209,8 @@ export default {
         </label>
       </div>
 
-      <label>Algum membro da família sofreu ou sofre de excesso de peso?</label>
-      <div>
+      <label class="dados">Algum membro da família sofreu ou sofre de excesso de peso?</label>
+      <div class="bloco">
         <label>
           <input class="input-familia_historico" v-model="familia_historico" type="radio" name="familia_historico"
             value="0" required> Não
@@ -218,8 +221,8 @@ export default {
         </label>
       </div>
 
-      <label>Com que frequência você pratica atividade física?</label>
-      <div>
+      <label class="dados">Com que frequência você pratica atividade física?</label>
+      <div class="bloco">
         <label>
           <input class="input-atividade_fisica" v-model="atividade_fisica" type="radio" name="atividade_fisica"
             value="0" required> Nunca
@@ -238,9 +241,9 @@ export default {
         </label>
       </div>
 
-      <label>Quanto tempo você usa dispositivos tecnológicos como celular, videogame, televisão , computador e
+      <label class="dados">Quanto tempo você usa dispositivos tecnológicos como celular, videogame, televisão , computador e
         outros</label>
-      <div>
+      <div class="bloco">
         <label>
           <input class="input-tempo_celular" v-model="tempo_celular" type="radio" name="tempo_celular" value="0"
             required> Nenhum Tempo
@@ -255,8 +258,8 @@ export default {
         </label>
       </div>
 
-      <label>Você come algum alimento entre as refeições?</label>
-      <div>
+      <label class="dados">Você come algum alimento entre as refeições?</label>
+      <div class="bloco">
         <label>
           <input class="input-alimentos_entre_refeicoes" v-model="alimentos_entre_refeicoes" type="radio"
             name="alimentos_entre_refeicoes" value="0" required> Nunca
@@ -275,8 +278,8 @@ export default {
         </label>
       </div>
 
-      <label>Qual transporte você costuma usar?</label>
-      <div>
+      <label class="dados">Qual transporte você costuma usar?</label>
+      <div class="bloco">
         <label>
           <input class="input-transporte" v-model="transporte" type="radio" name="transporte" value="0" required>
           Andando
@@ -297,7 +300,7 @@ export default {
         </label>
       </div>
 
-      <h4 class="resposta" v-show="resposta_requisicao">{{resposta_requisicao}}</h4>
+      <h4 class="resposta" v-show="resposta_requisicao">{{resposta_requisicao['message']}}</h4>
 
       <button type="submit" @click="enviar">CADASTRAR</button>
 
@@ -310,13 +313,12 @@ export default {
 
 <style scoped>
 .home{
-  background: linear-gradient(#9ad4ea, #60b8a5);
+  background: linear-gradient(#def0f7, #def0f7);
   color: #000;
   display: flex;
   flex-direction: column;
   align-items: center;
-  min-height: 100vh;
-
+  min-height: 130vh;
 }
 
 .form {
@@ -324,16 +326,130 @@ export default {
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  width: 95%;
 }
 
 .titulo{
   text-align: center;
   font-size: 1rem;
-  margin: 1rem;
+  margin-top: 5rem;
+  margin-bottom: 1.5rem;
 }
+
 .menu{
   position: fixed;
   width: 100%;
   z-index: 1;
 }
+
+.subtitulo{
+  font-size: 1.3rem;
+  font-weight: 500;
+  color: #1d3f2e;
+}
+
+.subtitulo2{
+  font-size: 1.3rem;
+  font-weight: 200;
+  margin-bottom: 1rem;
+}
+
+.input_nome{
+  width: 40%;
+  border: none;
+  height: 1.5rem;
+  margin: 0.5rem 0.5rem;
+  border-radius: 5px;
+}
+
+.input_idade{
+  width: 25%;
+  border: none;
+  height: 1.5rem;
+  margin: 0.5rem 0.5rem;
+  border-radius: 5px;
+}
+
+.input_altura{
+  width: 30%;
+  border: none;
+  height: 1.5rem;
+  margin: 0.5rem 0.5rem;
+  border-radius: 5px;
+}
+
+.input_peso{
+  width: 20%;
+  border: none;
+  height: 1.5rem;
+  margin: 0.5rem 0.5rem;
+  border-radius: 5px;
+}
+
+.inputs{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  
+}
+
+.dados_titulo{
+  font-size: 1rem;
+  font-weight: 400;
+  margin: 1rem 0rem;
+  text-align: center;
+}
+.dados{
+  font-size: 1.2rem;
+  font-weight: 390;
+  margin: 0.5rem 0rem;
+  text-align: center;
+  letter-spacing: 2px;  
+}
+
+.bloco2{
+  background-color: none;
+  border-radius: 10px;
+  padding: 1rem 0rem;
+  width: 100%;
+  box-shadow: 0px 5px 10px 0px #ffffff;
+  margin-bottom: 1rem;
+}
+
+.bloco{
+  background-color: none;
+  border-radius: 10px;
+  padding: 1rem 0rem;
+  width: 100%;
+  font-weight: 300;
+  font-size: 0.8rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0px 5px 10px 0px #ffffff;
+  margin: 1.5rem 0rem;
+  gap: 0.5rem;
+}
+
+button{
+  padding: 1rem;
+  width: 100%;
+  border: none;
+  border-radius: 10px;
+  background-color: #1d3f2e;
+  color: #def0f7;
+  margin-bottom: 1rem;
+  font-size: 1rem;
+  font-weight: 500;
+  letter-spacing: 0.5rem;
+}
+
+.resposta{
+  padding: 1.2rem;
+  text-align: center;
+  font-size: 1rem;
+  font-weight: 300;  
+}
+
 </style>

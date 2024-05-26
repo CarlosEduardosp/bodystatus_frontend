@@ -10,7 +10,7 @@ export default {
         <img class="logo" src="../assets/imagens/body.png">
         <div class="titulo">
 
-            BodyStatus AI
+            BodyStatus IA
         </div>
         <nav class="nav">
             <router-link class="item_menu" to="/">Home</router-link>
