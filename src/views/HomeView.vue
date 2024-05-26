@@ -64,7 +64,7 @@ export default {
 <template>
   <div class="home">
 
-    <Menu></Menu>
+    <Menu class="menu"></Menu>
 
     <div class="titulo">
       <p>Análise de Peso com IA: </p>
@@ -315,7 +315,8 @@ export default {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
+  min-height: 100vh;
+
 }
 
 .form {
@@ -329,5 +330,10 @@ export default {
   text-align: center;
   font-size: 1rem;
   margin: 1rem;
+}
+.menu{
+  position: fixed;
+  width: 100%;
+  z-index: 1;
 }
 </style>
